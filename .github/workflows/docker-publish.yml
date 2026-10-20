@@ -35,8 +35,8 @@ jobs:
         include:
           - arch: amd64
             runner: ubuntu-24.04
-          - arch: arm64
-            runner: ubuntu-24.04-arm
+          # - arch: arm64
+          #   runner: ubuntu-24.04-arm
     runs-on: ${{ matrix.runner }}
     timeout-minutes: 90
     permissions:
@@ -55,7 +55,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: wealthfolio/wealthfolio
+          images: nvtienanh/wealthfolio
       - name: Build native image once
         uses: docker/build-push-action@v5
         with:
@@ -101,7 +101,7 @@ jobs:
           GHCR_IMAGE: ghcr.io/${{ github.repository_owner }}/wealthfolio
           STAGING_TAG: ci-${{ github.run_id }}-${{ matrix.arch }}
         run: |
-          for image in docker.io/wealthfolio/wealthfolio docker.io/afadil/wealthfolio "$GHCR_IMAGE"; do
+          for image in docker.io/nvtienanh/wealthfolio "$GHCR_IMAGE"; do
             docker tag wealthfolio-smoke:ci "$image:$STAGING_TAG"
             docker push "$image:$STAGING_TAG"
           done
@@ -131,8 +131,7 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: |
-            docker.io/wealthfolio/wealthfolio
-            docker.io/afadil/wealthfolio
+            docker.io/nvtienanh/wealthfolio
             ghcr.io/${{ github.repository_owner }}/wealthfolio
           tags: |
             type=semver,pattern={{version}}

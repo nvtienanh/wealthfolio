@@ -1,8 +1,8 @@
 name: Release
 on:
-  push:
-    tags:
-      - "v*"
+  # push:
+  #   tags:
+  #     - "v*"
   # Manual runs build, sign, notarize, and test without publishing.
   workflow_dispatch:
 
