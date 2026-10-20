@@ -147,5 +147,5 @@ jobs:
             test -n "$tag"
             image="${tag%:*}"
             docker buildx imagetools create --tag "$tag" \
-              "$image:$STAGING_PREFIX-amd64" "$image:$STAGING_PREFIX-arm64"
+              "$image:$STAGING_PREFIX-amd64"
           done <<< "$RELEASE_TAGS"
