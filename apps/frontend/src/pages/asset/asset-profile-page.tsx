@@ -54,6 +54,7 @@ import type { TFunction } from "i18next";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useBackNavigation } from "@/pages/layouts/mobile-stack/use-mobile-stack";
 import { toast } from "sonner";
 import { AlternativeAssetContent, useAlternativeAssetActions } from "./alternative-asset-content";
 import { AssetSnapshotHistory, useHasManualSnapshots } from "./asset-account-holdings";
@@ -1068,9 +1069,7 @@ export const AssetProfilePage = () => {
     setRefreshConfirmOpen(true);
   }, []);
 
-  const handleBack = useCallback(() => {
-    navigate(-1);
-  }, [navigate]);
+  const handleBack = useBackNavigation();
 
   const handleCopySymbol = useCallback(async () => {
     try {
@@ -1376,10 +1375,19 @@ export const AssetProfilePage = () => {
                                 },
                               ]
                             : []),
-                          ...(altAssetActions.loanAvailability.recalculate
+                          ...(altAssetActions.loanAvailability.changeRate
                             ? [
                                 {
                                   icon: Icons.Percent,
+                                  label: t("asset:loanActions.change_rate"),
+                                  onClick: altAssetActions.loanActions.changeRate,
+                                },
+                              ]
+                            : []),
+                          ...(altAssetActions.loanAvailability.recalculate
+                            ? [
+                                {
+                                  icon: Icons.DollarSign,
                                   label: t("asset:loanActions.recalculate_schedule"),
                                   onClick: altAssetActions.loanActions.recalculate,
                                 },
