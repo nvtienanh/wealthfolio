@@ -749,6 +749,9 @@
     "recalculate_current_balance": "Số dư hiện tại",
     "recalculate_new_rate": "Lãi suất hàng năm mới (%)",
     "recalculate_confirm": "Tính toán lại",
+    "change_rate": "Thay đổi lãi suất",
+    "change_rate_description": "Ghi nhận mức lãi suất mới từ bên cho vay. Số dư và các khoản thanh toán trước đó vẫn giữ nguyên.",
+    "rate_in_effect": "Lãi suất vào ngày này: {{rate}}",
     "automatic_schedule": "Ước tính số dư từ các khoản thanh toán",
     "automatic_schedule_description": "Sử dụng lãi suất và lịch thanh toán. Số dư trên sao kê bạn nhập sẽ được ưu tiên. Tắt tính năng này nếu bạn muốn tự cập nhật số dư.",
     "original_terms": "Điều khoản ban đầu",
@@ -771,7 +774,9 @@
       "amount_exceeds_balance": "Số tiền trả nợ không thể vượt quá số dư hiện tại.",
       "closure_date_invalid": "Ngày tất toán phải nằm giữa ngày bắt đầu vay và hôm nay.",
       "required": "Bắt buộc",
-      "first_payment_after_origination": "Khoản thanh toán đầu tiên phải sau ngày giải ngân."
+      "first_payment_after_origination": "Khoản thanh toán đầu tiên phải sau ngày giải ngân.",
+      "payment_positive": "Khoản thanh toán phải lớn hơn 0.",
+      "term_too_long": "Thời hạn không thể dài hơn 100 năm."
     },
     "accelerated_biweekly": "2 tuần/lần rút gọn (Accelerated biweekly)",
     "first_payment_date": "Ngày thanh toán đầu tiên",
