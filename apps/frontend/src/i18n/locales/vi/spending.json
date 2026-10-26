@@ -105,6 +105,7 @@
     "selectCategory": "Chọn danh mục",
     "priorityLabel": "Độ ưu tiên",
     "priorityHint": "Các quy tắc có độ ưu tiên cao hơn sẽ được kiểm tra trước (0-100).",
+    "priorityInvalid": "Độ ưu tiên phải là một số nguyên từ 0 trở lên",
     "updateRule": "Cập nhật quy tắc",
     "createRule": "Tạo quy tắc",
     "scopeLabel": "Áp dụng cho",
